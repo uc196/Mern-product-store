@@ -12,6 +12,10 @@ const port = 3000;
 // Middleware to parse JSON
 app.use(express.json());
 
+app.use('/uploads', express.static('uploads')); // Serve uploaded images
+
+app.use(express.static('public')); // Serve static files from the 'public' directory
+
 // POST Route to Create a Product
 app.use("/api/products", productroute);
 
